@@ -1,0 +1,27 @@
+#! /usr/bin/env coffee
+
+co = require 'co'
+Tracer = require 'amqp-tracer'
+
+# load config file path from command line
+configFile = process.argv[2]
+config = require('../config')(configFile)
+Storage = require '../lib/storage'
+
+co ->
+  tracer = new Tracer(config)
+  storage = new Storage(config.storage)
+
+  tracer.on 'connect.ready', ->
+    console.log "connected"
+
+  tracer.on 'message.published', (data) ->
+    console.log "published data"
+    storage.savePublish(data)
+
+  tracer.on 'message.delivered', (data) ->
+    console.log "delivered data"
+    storage.saveDeliver(data)
+
+  tracer.on 'connect.error', (err) =>
+    console.warn "connect error:", err

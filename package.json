@@ -1,0 +1,30 @@
+{
+  "name": "rabbitmq-tracing",
+  "version": "0.0.1",
+  "description": "rabbitmq message tracing ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:leonchen/rabbitmq-tracing.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "amqp-tracer": "0.0.4",
+    "bluebird": "^2.9.34",
+    "co": "^4.6.0",
+    "js-yaml": "^3.4.1",
+    "merge": "^1.2.0",
+    "mongodb": "^2.0.42",
+    "redis": "^0.12.1"
+  },
+  "devDependencies": {
+    "amqplib": "^0.3.2",
+    "mocha": "^2.3.0",
+    "mocha-co": "^1.17.1-co.1",
+    "should": "^7.1.0"
+  }
+}

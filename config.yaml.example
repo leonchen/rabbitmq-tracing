@@ -1,0 +1,23 @@
+storage:
+  storages:
+    persist:
+      host: "127.0.0.1"
+      port: 27017
+      db: "myapp-traces-test"
+    recent:
+      keyPrefix: "test"
+      ttl: 30 
+
+# amqp-tracer configs
+amqp:
+  host: "localhost"
+  port: 5672
+  user: "guest"
+  pass: "guest"
+queues:
+  publish:
+    name: "my.tracer.publish"
+    routingKey: "publish.#"
+  deliver:
+    name: "my.tracer.deliver"
+    routingKey: "deliver.#"

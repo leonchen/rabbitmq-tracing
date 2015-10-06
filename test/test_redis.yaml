@@ -1,0 +1,5 @@
+storage:
+  storages:
+    recent:
+      keyPrefix: "test"
+      ttl: 2 

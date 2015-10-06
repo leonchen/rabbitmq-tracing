@@ -1,0 +1,9 @@
+storage:
+  storages:
+    persist:
+      host: "127.0.0.1"
+      port: 27017
+      db: "my-traces-test"
+    recent:
+      keyPrefix: "test"
+      ttl: 2 
